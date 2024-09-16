@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS DOM Events</title>
+</head>
+
+<body>
+    <h1>DOM er ajke Special events</h1>
+    <button tittle="this is a tooltip" onclick="console.log(7)">Click Me</button>
+    <button onclick="console.log(60)">Another button</button>
+    <button onclick="document.body.style.backgroundColor='Yellow'">Make Yellow</button>
+    <button onclick="makeRed()">Make Red</button>
+    <button id="make-blue">Make Blue</button>
+    <button id="make-purple">Make purple</button>
+    <button id="make-pink">Make Pink</button>
+    <button id="goldenrod">Make goldenrod</button>
+    <script src="js/event.js"></script>
+    <script>
+        function makeRed() {
+            document.body.style.backgroundColor = 'Red';
+        }
+    </script>
+    <script>
+        const purpleButton = document.getElementById('make-purple');
+        purpleButton.onclick = function makePurple() {
+            document.body.style.backgroundColor = 'purple';
+        }
+    </script>
+    <script>
+        const pinkButton = document.getElementById('make-pink');
+        pinkButton.addEventListener('click', makePink)
+
+        function makePink() {
+            document.body.style.backgroundColor = 'pink';
+        }
+    </script>
+    <!-- important -->
+    <script>
+        document.getElementById('goldenrod').addEventListener('click', function () {
+            document.body.style.backgroundColor = 'goldenrod';
+        })
+    </script>
+</body>
+
+</html>
